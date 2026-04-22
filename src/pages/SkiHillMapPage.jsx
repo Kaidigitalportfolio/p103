@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import wisconsinMap from '../assets/wisconsin.svg'
 import pinImage from '../assets/pin.svg'
+import MapPin from '../components/MapPin'
 import { skiHills } from '../data/skiHills'
 
 const mapStageStyle = {
@@ -82,26 +83,12 @@ function SkiHillMapPage() {
                     const isActive = selectedId === hill.id
 
                     return (
-                      <button
+                      <MapPin
                         key={hill.id}
-                        type="button"
-                        className={`ski-map-pin${isActive ? ' is-active' : ''}`}
-                        style={{
-                          position: 'absolute',
-                          top: hill.mapPosition.top,
-                          left: hill.mapPosition.left,
-                          transform: 'translate(-34%, -100%)',
-                          display: 'inline-flex',
-                          alignItems: 'flex-end',
-                          gap: '0.55rem',
-                          padding: 0,
-                          border: 0,
-                          background: 'transparent',
-                          cursor: 'pointer',
-                          zIndex: 3,
-                        }}
-                        aria-pressed={lockedId === hill.id}
-                        aria-label={`Show ${hill.name}`}
+                        hill={hill}
+                        isActive={isActive}
+                        isLocked={lockedId === hill.id}
+                        pinImage={pinImage}
                         onMouseEnter={() => handlePinEnter(hill.id)}
                         onFocus={() => setSelectedId(hill.id)}
                         onBlur={() => {
@@ -110,24 +97,7 @@ function SkiHillMapPage() {
                           }
                         }}
                         onClick={() => handlePinClick(hill.id)}
-                      >
-                        <img
-                          src={pinImage}
-                          alt=""
-                          className="ski-map-pin-icon"
-                          style={{
-                            display: 'block',
-                            width: '30px',
-                            height: '30px',
-                            objectFit: 'contain',
-                            filter: isActive
-                              ? 'drop-shadow(0 14px 20px rgba(13, 110, 253, 0.28))'
-                              : 'drop-shadow(0 10px 16px rgba(11, 27, 43, 0.22))',
-                            transform: isActive ? 'scale(1.12)' : 'scale(1)',
-                            transformOrigin: 'bottom center',
-                          }}
-                        />
-                      </button>
+                      />
                     )
                   })}
                 </div>
