@@ -1,45 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Container, Row, Col, Form } from 'react-bootstrap'
 import SkiHillCard from '../components/SkiHillCard'
-
-const skiHills = [
-  {
-    id: 1,
-    name: "Devil's Head",
-    distanceMiles: 45,
-    verticalDropFt: 500,
-    terrainTypes: ["Beginner", "Intermediate", "Advanced"],
-    description: "Placeholder description for Devil's Head ski resort.",
-    website: "https://www.devilsheadresort.com/"
-  },
-  {
-    id: 2,
-    name: "Cascade Mountain",
-    distanceMiles: 35,
-    verticalDropFt: 460,
-    terrainTypes: ["Beginner", "Intermediate"],
-    description: "Placeholder description for Cascade Mountain.",
-    website: "https://www.cascademountain.com/"
-  },
-  {
-    id: 3,
-    name: "Granite Peak",
-    distanceMiles: 130,
-    verticalDropFt: 700,
-    terrainTypes: ["Intermediate", "Advanced", "Expert"],
-    description: "Placeholder description for Granite Peak.",
-    website: "https://www.skigranitepeak.com/"
-  },
-  {
-    id: 4,
-    name: "Tyrol Basin",
-    distanceMiles: 25,
-    verticalDropFt: 300,
-    terrainTypes: ["Beginner", "Intermediate"],
-    description: "Placeholder description for Tyrol Basin.",
-    website: "https://www.tyrolbasin.com/"
-  }
-]
+import { skiHills } from '../data/skiHills'
 
 function SkiHillsPage() {
   const [search, setSearch] = useState('')
