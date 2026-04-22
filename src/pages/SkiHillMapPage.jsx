@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
-import wisconsinMap from '../assets/wisconsinpng.png'
+import wisconsinMap from '../assets/wisconsin.svg'
 import pinImage from '../assets/pin.svg'
 import { skiHills } from '../data/skiHills'
 
@@ -53,8 +53,9 @@ function SkiHillMapPage() {
               aria-label="Map of Wisconsin with ski hill locations"
               onMouseLeave={handlePinLeave}
             >
-              <img src={wisconsinMap} alt="Map of Wisconsin" className="ski-map-image" />
-              <div className="ski-map-overlay">
+              <div className="ski-map-canvas">
+                <img src={wisconsinMap} alt="Map of Wisconsin" className="ski-map-image" />
+                <div className="ski-map-overlay">
                 {skiHills.map(hill => {
                   const isActive = selectedId === hill.id
 
@@ -80,6 +81,7 @@ function SkiHillMapPage() {
                     </button>
                   )
                 })}
+                </div>
               </div>
             </section>
           </Col>

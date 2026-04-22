@@ -37,25 +37,33 @@ body {
 }
 
 .ski-map-board {
-  position: relative;
   overflow: hidden;
   border: 1px solid rgba(23, 33, 43, 0.08);
   border-radius: 28px;
   background: radial-gradient(circle at top, rgba(255, 255, 255, 0.92), rgba(220, 232, 242, 0.82));
   box-shadow: 0 24px 70px rgba(17, 38, 58, 0.12);
+  padding: 1rem;
+}
+
+.ski-map-canvas {
+  display: grid;
+  width: 100%;
+}
+
+.ski-map-canvas > * {
+  grid-area: 1 / 1;
 }
 
 .ski-map-image {
   display: block;
   width: 100%;
   height: auto;
-  position: relative;
   z-index: 1;
 }
 
 .ski-map-overlay {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  min-height: 100%;
   z-index: 2;
   pointer-events: none;
 }
