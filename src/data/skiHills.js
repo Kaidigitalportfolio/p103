@@ -8,8 +8,8 @@ export const skiHills = [
     description: "A Baraboo-area ski destination with a larger vertical drop and a broad range of terrain.",
     website: 'https://www.devilsheadresort.com/',
     mapPosition: {
-      top: '75%',
-      left: '39%',
+      top: '81%',
+      left: '50%',
     },
   },
   {
@@ -21,8 +21,8 @@ export const skiHills = [
     description: 'A Portage-area hill known for accessible runs and a strong beginner-to-intermediate mix.',
     website: 'https://www.cascademountain.com/',
     mapPosition: {
-      top: '68%',
-      left: '48%',
+      top: '78%',
+      left: '53%',
     },
   },
   {
@@ -34,8 +34,8 @@ export const skiHills = [
     description: "Wisconsin's tallest ski area, located in Wausau with the state's biggest vertical drop.",
     website: 'https://www.skigranitepeak.com/',
     mapPosition: {
-      top: '41%',
-      left: '49%',
+      top: '51%',
+      left: '51%',
     },
   },
   {
@@ -47,8 +47,8 @@ export const skiHills = [
     description: 'A compact Mount Horeb hill that is easy to reach from Madison and good for quick ski days.',
     website: 'https://www.tyrolbasin.com/',
     mapPosition: {
-      top: '80%',
-      left: '36%',
+      top: '90%',
+      left: '45%',
     },
   },
 ]
