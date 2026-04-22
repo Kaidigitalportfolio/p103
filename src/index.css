@@ -93,6 +93,11 @@ body {
 }
 
 .ski-map-pin-label {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 0.45rem);
+  transform: translateY(-50%);
+  white-space: nowrap;
   padding: 0.35rem 0.65rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.94);

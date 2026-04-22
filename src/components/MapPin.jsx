@@ -17,14 +17,13 @@ function MapPin({
         top: hill.mapPosition.top,
         left: hill.mapPosition.left,
         transform: 'translate(-34%, -100%)',
-        display: 'inline-flex',
-        alignItems: 'flex-end',
-        gap: '0.55rem',
+        display: 'block',
         padding: 0,
         border: 0,
         background: 'transparent',
         cursor: 'pointer',
         zIndex: 3,
+        overflow: 'visible',
       }}
       aria-pressed={isLocked}
       aria-label={`Show ${hill.name}`}
