@@ -112,7 +112,6 @@ body {
 .ski-map-pin:focus-visible .ski-map-pin-icon,
 .ski-map-pin.is-active .ski-map-pin-icon {
   filter: drop-shadow(0 14px 20px rgba(13, 110, 253, 0.28));
-  transform: scale(1.12);
 }
 
 .ski-map-pin:focus-visible {

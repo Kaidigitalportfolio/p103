@@ -18,12 +18,17 @@ function MapPin({
         left: hill.mapPosition.left,
         transform: 'translate(-34%, -100%)',
         display: 'block',
+        width: '30px',
+        height: '30px',
+        minWidth: '30px',
+        minHeight: '30px',
         padding: 0,
         border: 0,
         background: 'transparent',
         cursor: 'pointer',
         zIndex: 3,
         overflow: 'visible',
+        lineHeight: 0,
       }}
       aria-pressed={isLocked}
       aria-label={`Show ${hill.name}`}
@@ -44,8 +49,6 @@ function MapPin({
           filter: isActive
             ? 'drop-shadow(0 14px 20px rgba(13, 110, 253, 0.28))'
             : 'drop-shadow(0 10px 16px rgba(11, 27, 43, 0.22))',
-          transform: isActive ? 'scale(1.12)' : 'scale(1)',
-          transformOrigin: 'bottom center',
         }}
       />
       {isActive ? <span className="ski-map-pin-label">{hill.name}</span> : null}
