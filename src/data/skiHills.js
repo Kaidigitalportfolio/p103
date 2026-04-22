@@ -9,7 +9,7 @@ export const skiHills = [
     website: 'https://www.devilsheadresort.com/',
     mapPosition: {
       top: '81%',
-      left: '50%',
+      left: '52%',
     },
   },
   {
@@ -22,7 +22,7 @@ export const skiHills = [
     website: 'https://www.cascademountain.com/',
     mapPosition: {
       top: '78%',
-      left: '53%',
+      left: '55%',
     },
   },
   {
@@ -35,7 +35,7 @@ export const skiHills = [
     website: 'https://www.skigranitepeak.com/',
     mapPosition: {
       top: '51%',
-      left: '51%',
+      left: '53%',
     },
   },
   {
@@ -47,8 +47,8 @@ export const skiHills = [
     description: 'A compact Mount Horeb hill that is easy to reach from Madison and good for quick ski days.',
     website: 'https://www.tyrolbasin.com/',
     mapPosition: {
-      top: '90%',
-      left: '45%',
+      top: '89%',
+      left: '50%',
     },
   },
 ]
