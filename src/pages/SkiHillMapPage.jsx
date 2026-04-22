@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import wisconsinMap from '../assets/wisconsinpng.png'
+import pinImage from '../assets/pin.png'
 import { skiHills } from '../data/skiHills'
 
 function SkiHillMapPage() {
@@ -74,7 +75,7 @@ function SkiHillMapPage() {
                     }}
                     onClick={() => handlePinClick(hill.id)}
                   >
-                    <span className="ski-map-pin-dot" />
+                    <img src={pinImage} alt="" className="ski-map-pin-icon" />
                     <span className="ski-map-pin-label">{hill.name}</span>
                   </button>
                 )

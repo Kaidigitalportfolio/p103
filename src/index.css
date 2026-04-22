@@ -54,23 +54,23 @@ body {
 .ski-map-pin {
   position: absolute;
   display: inline-flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.55rem;
   padding: 0;
   border: 0;
   background: transparent;
-  transform: translate(-50%, -50%);
+  transform: translate(-34%, -100%);
   cursor: pointer;
+  z-index: 2;
 }
 
-.ski-map-pin-dot {
-  width: 18px;
-  height: 18px;
-  border: 3px solid #fff;
-  border-radius: 999px;
-  background: #d62839;
-  box-shadow: 0 0 0 6px rgba(214, 40, 57, 0.18);
-  transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+.ski-map-pin-icon {
+  display: block;
+  width: 30px;
+  height: auto;
+  filter: drop-shadow(0 10px 16px rgba(11, 27, 43, 0.22));
+  transform-origin: bottom center;
+  transition: transform 150ms ease, filter 150ms ease;
 }
 
 .ski-map-pin-label {
@@ -84,12 +84,11 @@ body {
   box-shadow: 0 8px 24px rgba(20, 33, 46, 0.14);
 }
 
-.ski-map-pin:hover .ski-map-pin-dot,
-.ski-map-pin:focus-visible .ski-map-pin-dot,
-.ski-map-pin.is-active .ski-map-pin-dot {
-  background: #0d6efd;
-  box-shadow: 0 0 0 8px rgba(13, 110, 253, 0.2);
-  transform: scale(1.15);
+.ski-map-pin:hover .ski-map-pin-icon,
+.ski-map-pin:focus-visible .ski-map-pin-icon,
+.ski-map-pin.is-active .ski-map-pin-icon {
+  filter: drop-shadow(0 14px 20px rgba(13, 110, 253, 0.28));
+  transform: scale(1.12);
 }
 
 .ski-map-pin:focus-visible {
@@ -125,8 +124,11 @@ body {
     display: none;
   }
 
-  .ski-map-pin-dot {
-    width: 16px;
-    height: 16px;
+  .ski-map-pin {
+    transform: translate(-36%, -100%);
+  }
+
+  .ski-map-pin-icon {
+    width: 24px;
   }
 }
