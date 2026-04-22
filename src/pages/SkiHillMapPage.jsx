@@ -4,6 +4,29 @@ import wisconsinMap from '../assets/wisconsin.svg'
 import pinImage from '../assets/pin.svg'
 import { skiHills } from '../data/skiHills'
 
+const mapStageStyle = {
+  position: 'relative',
+  width: '100%',
+  maxWidth: '540px',
+  aspectRatio: '723 / 774',
+  margin: '0 auto',
+}
+
+const mapImageStyle = {
+  position: 'absolute',
+  inset: 0,
+  width: '100%',
+  height: '100%',
+  objectFit: 'contain',
+  display: 'block',
+}
+
+const mapOverlayStyle = {
+  position: 'absolute',
+  inset: 0,
+  zIndex: 2,
+}
+
 function SkiHillMapPage() {
   const [selectedId, setSelectedId] = useState(null)
   const [lockedId, setLockedId] = useState(null)
@@ -53,9 +76,9 @@ function SkiHillMapPage() {
               aria-label="Map of Wisconsin with ski hill locations"
               onMouseLeave={handlePinLeave}
             >
-              <div className="ski-map-stage">
-                <img src={wisconsinMap} alt="Map of Wisconsin" className="ski-map-image" />
-                <div className="ski-map-overlay">
+              <div style={mapStageStyle}>
+                <img src={wisconsinMap} alt="Map of Wisconsin" style={mapImageStyle} />
+                <div style={mapOverlayStyle}>
                   {skiHills.map(hill => {
                     const isActive = selectedId === hill.id
 
@@ -64,7 +87,20 @@ function SkiHillMapPage() {
                         key={hill.id}
                         type="button"
                         className={`ski-map-pin${isActive ? ' is-active' : ''}`}
-                        style={hill.mapPosition}
+                        style={{
+                          position: 'absolute',
+                          top: hill.mapPosition.top,
+                          left: hill.mapPosition.left,
+                          transform: 'translate(-34%, -100%)',
+                          display: 'inline-flex',
+                          alignItems: 'flex-end',
+                          gap: '0.55rem',
+                          padding: 0,
+                          border: 0,
+                          background: 'transparent',
+                          cursor: 'pointer',
+                          zIndex: 3,
+                        }}
                         aria-pressed={lockedId === hill.id}
                         aria-label={`Show ${hill.name}`}
                         onMouseEnter={() => handlePinEnter(hill.id)}
@@ -76,7 +112,22 @@ function SkiHillMapPage() {
                         }}
                         onClick={() => handlePinClick(hill.id)}
                       >
-                        <img src={pinImage} alt="" className="ski-map-pin-icon" />
+                        <img
+                          src={pinImage}
+                          alt=""
+                          className="ski-map-pin-icon"
+                          style={{
+                            display: 'block',
+                            width: '24px',
+                            height: '24px',
+                            objectFit: 'contain',
+                            filter: isActive
+                              ? 'drop-shadow(0 14px 20px rgba(13, 110, 253, 0.28))'
+                              : 'drop-shadow(0 10px 16px rgba(11, 27, 43, 0.22))',
+                            transform: isActive ? 'scale(1.12)' : 'scale(1)',
+                            transformOrigin: 'bottom center',
+                          }}
+                        />
                         <span className="ski-map-pin-label">{hill.name}</span>
                       </button>
                     )
