@@ -53,34 +53,34 @@ function SkiHillMapPage() {
               aria-label="Map of Wisconsin with ski hill locations"
               onMouseLeave={handlePinLeave}
             >
-              <div className="ski-map-canvas">
+              <div className="ski-map-stage">
                 <img src={wisconsinMap} alt="Map of Wisconsin" className="ski-map-image" />
                 <div className="ski-map-overlay">
-                {skiHills.map(hill => {
-                  const isActive = selectedId === hill.id
+                  {skiHills.map(hill => {
+                    const isActive = selectedId === hill.id
 
-                  return (
-                    <button
-                      key={hill.id}
-                      type="button"
-                      className={`ski-map-pin${isActive ? ' is-active' : ''}`}
-                      style={hill.mapPosition}
-                      aria-pressed={lockedId === hill.id}
-                      aria-label={`Show ${hill.name}`}
-                      onMouseEnter={() => handlePinEnter(hill.id)}
-                      onFocus={() => setSelectedId(hill.id)}
-                      onBlur={() => {
-                        if (lockedId === null) {
-                          setSelectedId(null)
-                        }
-                      }}
-                      onClick={() => handlePinClick(hill.id)}
-                    >
-                      <img src={pinImage} alt="" className="ski-map-pin-icon" />
-                      <span className="ski-map-pin-label">{hill.name}</span>
-                    </button>
-                  )
-                })}
+                    return (
+                      <button
+                        key={hill.id}
+                        type="button"
+                        className={`ski-map-pin${isActive ? ' is-active' : ''}`}
+                        style={hill.mapPosition}
+                        aria-pressed={lockedId === hill.id}
+                        aria-label={`Show ${hill.name}`}
+                        onMouseEnter={() => handlePinEnter(hill.id)}
+                        onFocus={() => setSelectedId(hill.id)}
+                        onBlur={() => {
+                          if (lockedId === null) {
+                            setSelectedId(null)
+                          }
+                        }}
+                        onClick={() => handlePinClick(hill.id)}
+                      >
+                        <img src={pinImage} alt="" className="ski-map-pin-icon" />
+                        <span className="ski-map-pin-label">{hill.name}</span>
+                      </button>
+                    )
+                  })}
                 </div>
               </div>
             </section>
