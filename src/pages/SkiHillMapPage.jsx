@@ -7,7 +7,7 @@ import { skiHills } from '../data/skiHills'
 const mapStageStyle = {
   position: 'relative',
   width: '100%',
-  maxWidth: '540px',
+  maxWidth: '680px',
   aspectRatio: '723 / 774',
   margin: '0 auto',
 }
@@ -62,7 +62,6 @@ function SkiHillMapPage() {
     <main className="ski-map-page">
       <Container>
         <div className="ski-map-hero">
-          <p className="ski-map-eyebrow">Interactive Trail Finder</p>
           <h1>Wisconsin ski hills on the map</h1>
           <p className="ski-map-intro">
             Hover a pin to preview a hill. Click a pin to keep its card open while you explore.
@@ -118,8 +117,8 @@ function SkiHillMapPage() {
                           className="ski-map-pin-icon"
                           style={{
                             display: 'block',
-                            width: '24px',
-                            height: '24px',
+                            width: '30px',
+                            height: '30px',
                             objectFit: 'contain',
                             filter: isActive
                               ? 'drop-shadow(0 14px 20px rgba(13, 110, 253, 0.28))'
@@ -128,7 +127,6 @@ function SkiHillMapPage() {
                             transformOrigin: 'bottom center',
                           }}
                         />
-                        <span className="ski-map-pin-label">{hill.name}</span>
                       </button>
                     )
                   })}
