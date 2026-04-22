@@ -86,7 +86,6 @@ function SkiHillMapPage() {
                       <MapPin
                         key={hill.id}
                         hill={hill}
-                        isActive={isActive}
                         isLocked={lockedId === hill.id}
                         pinImage={pinImage}
                         onMouseEnter={() => handlePinEnter(hill.id)}

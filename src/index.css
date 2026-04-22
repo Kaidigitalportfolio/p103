@@ -92,22 +92,6 @@ body {
   transition: transform 150ms ease, filter 150ms ease;
 }
 
-.ski-map-pin-label {
-  position: absolute;
-  top: 50%;
-  left: calc(100% + 0.45rem);
-  transform: translateY(-50%);
-  white-space: nowrap;
-  padding: 0.35rem 0.65rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.94);
-  color: #17324d;
-  font-size: 0.82rem;
-  font-weight: 600;
-  line-height: 1;
-  box-shadow: 0 8px 24px rgba(20, 33, 46, 0.14);
-}
-
 .ski-map-pin:hover .ski-map-pin-icon,
 .ski-map-pin:focus-visible .ski-map-pin-icon,
 .ski-map-pin.is-active .ski-map-pin-icon {
