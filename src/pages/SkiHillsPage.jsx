@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import { Container, Row, Col, Form } from 'react-bootstrap'
-import HillStats from '../components/HillStats'
 import PageIntro from '../components/PageIntro'
 import SkiHillCard from '../components/SkiHillCard'
 import { skiHills } from '../data/skiHills'
@@ -87,7 +86,6 @@ function SkiHillsPage() {
         title="Ski Hills"
         description="Filter Wisconsin ski areas by distance, vertical drop, terrain, and name."
       />
-      <HillStats hills={filteredHills} />
       <Form className="filter-card mb-4">
         <Row className="g-3 align-items-end">
           <Col xs={12} md={4} lg={3}>
