@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Badge, Col, Card, Button } from 'react-bootstrap'
+import { Col, Card, Button } from 'react-bootstrap'
 
 function SkiHillCard({ hill }) {
   const [showMore, setShowMore] = useState(false)
@@ -18,23 +18,19 @@ function SkiHillCard({ hill }) {
             onError={() => setImageVisible(false)}
           />
         ) : null}
-        <Card.Body className="ski-hill-card-body">
+        <Card.Body>
           <Card.Title>
             <a href={hill.website} target="_blank" rel="noopener noreferrer">
               {hill.name}
             </a>
           </Card.Title>
-          <div className="hill-card-metrics">
-            <span><strong>{hill.distanceMiles}</strong> mi from Madison</span>
-            <span><strong>{hill.verticalDropFt}</strong> ft vertical</span>
-          </div>
-          <div className="terrain-badges">
-            {hill.terrainTypes.map(terrain => (
-              <Badge bg="light" text="dark" key={terrain}>{terrain}</Badge>
-            ))}
-          </div>
+          <Card.Text>
+            <strong>Distance from Madison:</strong> {hill.distanceMiles} miles<br />
+            <strong>Vertical Drop:</strong> {hill.verticalDropFt} ft<br />
+            <strong>Terrain:</strong> {hill.terrainTypes.join(', ')}
+          </Card.Text>
           {showMore && <Card.Text>{hill.description}</Card.Text>}
-          <Button className="mt-auto" variant="outline-primary" onClick={() => setShowMore(!showMore)}>
+          <Button variant="outline-primary" onClick={() => setShowMore(!showMore)}>
             {showMore ? 'Show Less' : 'Show More'}
           </Button>
         </Card.Body>

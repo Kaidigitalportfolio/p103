@@ -1,11 +1,8 @@
 import { useMemo, useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import wisconsinMap from '../assets/wisconsin.svg'
 import pinImage from '../assets/pin.svg'
 import MapPin from '../components/MapPin'
-import PageHeader from '../components/PageHeader'
-import SkiMapDetailsCard from '../components/SkiMapDetailsCard'
-import StatsStrip from '../components/StatsStrip'
 import { skiHills } from '../data/skiHills'
 
 const mapStageStyle = {
@@ -65,18 +62,12 @@ function SkiHillMapPage() {
   return (
     <main className="ski-map-page">
       <Container>
-        <PageHeader
-          eyebrow="Map"
-          title="Wisconsin ski hills on the map"
-          description="Use the pin map to see how each hill is spread across the state."
-        />
-        <StatsStrip
-          stats={[
-            { value: skiHills.length, label: 'map pins' },
-            { value: `${Math.max(...skiHills.map(hill => hill.verticalDropFt))} ft`, label: 'top vertical' },
-            { value: activeHill ? activeHill.name : 'None', label: 'selected hill' },
-          ]}
-        />
+        <div className="ski-map-hero">
+          <h1>Wisconsin ski hills on the map</h1>
+          <p className="ski-map-intro">
+            Hover a pin to preview a hill. Click a pin to keep its card open while you explore.
+          </p>
+        </div>
 
         <Row className="g-4 align-items-start">
           <Col lg={8}>
@@ -112,7 +103,40 @@ function SkiHillMapPage() {
           </Col>
 
           <Col lg={4}>
-            <SkiMapDetailsCard hill={activeHill} />
+            <Card className="ski-map-card shadow-sm">
+              <Card.Body>
+                {activeHill ? (
+                  <>
+                    <p className="ski-map-card-label">Selected location</p>
+                    <Card.Title as="h2">{activeHill.name}</Card.Title>
+                    <Card.Text>{activeHill.description}</Card.Text>
+                    <Card.Text>
+                      <strong>Distance from Madison:</strong> {activeHill.distanceMiles} miles
+                      <br />
+                      <strong>Vertical drop:</strong> {activeHill.verticalDropFt} ft
+                      <br />
+                      <strong>Terrain:</strong> {activeHill.terrainTypes.join(', ')}
+                    </Card.Text>
+                    <Button
+                      href={activeHill.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      variant="primary"
+                    >
+                      Visit Website
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <p className="ski-map-card-label">No location selected</p>
+                    <Card.Title as="h2">Choose a pin</Card.Title>
+                    <Card.Text>
+                      Hover over a Wisconsin location pin or click one to lock its details in place.
+                    </Card.Text>
+                  </>
+                )}
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </Container>
