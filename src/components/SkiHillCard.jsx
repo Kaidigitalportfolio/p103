@@ -3,10 +3,21 @@ import { Col, Card, Button } from 'react-bootstrap'
 
 function SkiHillCard({ hill }) {
   const [showMore, setShowMore] = useState(false)
+  const [imageVisible, setImageVisible] = useState(Boolean(hill.imageFile))
+  const imageSrc = hill.imageFile ? `${import.meta.env.BASE_URL}ski-hills/${hill.imageFile}` : null
 
   return (
     <Col md={6} lg={3} className="mb-4">
-      <Card>
+      <Card className="h-100">
+        {imageSrc && imageVisible ? (
+          <Card.Img
+            variant="top"
+            src={imageSrc}
+            alt={`${hill.name} ski hill`}
+            className="ski-hill-card-image"
+            onError={() => setImageVisible(false)}
+          />
+        ) : null}
         <Card.Body>
           <Card.Title>
             <a href={hill.website} target="_blank" rel="noopener noreferrer">

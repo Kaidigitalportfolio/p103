@@ -120,6 +120,11 @@ body {
   text-transform: uppercase;
 }
 
+.ski-hill-card-image {
+  height: 180px;
+  object-fit: cover;
+}
+
 @media (max-width: 991.98px) {
   .ski-map-page {
     padding-top: 2rem;
