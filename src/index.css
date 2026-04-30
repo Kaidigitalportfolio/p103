@@ -84,13 +84,9 @@ body {
 .home-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.home-action-item {
-  margin-right: 0.5rem;
-  margin-bottom: 0.75rem;
+  column-gap: 0.85rem;
+  row-gap: 0.6rem;
+  margin-bottom: 2.25rem;
 }
 
 .home-stats {
@@ -102,6 +98,10 @@ body {
 }
 
 .home-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  flex-wrap: wrap;
   padding: 1.15rem;
   border: 1px solid rgba(23, 33, 43, 0.08);
   border-radius: 14px;
@@ -109,24 +109,26 @@ body {
   box-shadow: 0 12px 30px rgba(17, 38, 58, 0.08);
 }
 
-.home-stat-value {
-  display: block;
-  margin-bottom: 0.85rem;
+.home-stat strong {
+  display: inline;
   color: #142536;
   font-size: 1.55rem;
   line-height: 1;
+  white-space: nowrap;
 }
 
-.home-stat-label {
-  display: block;
-  margin-top: 0.2rem;
+.home-stat span {
+  display: inline;
   color: #526575;
   font-size: 0.9rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .home-photo-card {
   overflow: hidden;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
   border: 1px solid rgba(23, 33, 43, 0.08);
   border-radius: 18px;
 }
@@ -136,18 +138,18 @@ body {
   object-fit: cover;
 }
 
-.home-photo-body {
+.home-photo-card .card-body {
   padding: 1.75rem;
 }
 
-.home-photo-badge {
+.home-photo-card .badge {
   display: inline-block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
-.home-photo-title,
+.home-photo-card .card-title,
 .home-feature .card-title {
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
   color: #142536;
   font-size: 1.25rem;
   font-weight: 700;

@@ -5,9 +5,8 @@ import { skiHills } from '../data/skiHills'
 function HomeStat({ value, label }) {
   return (
     <div className="home-stat">
-      <strong className="home-stat-value">{value}</strong>
-      <br />
-      <span className="home-stat-label">{label}</span>
+      <strong>{value}</strong>
+      <span>{label}</span>
     </div>
   )
 }
@@ -29,9 +28,9 @@ function FeaturedHill({ hill }) {
   return (
     <Card className="home-photo-card">
       <Card.Img src={imageSrc} alt={`${hill.name} ski hill`} />
-      <Card.Body className="home-photo-body">
-        <Badge bg="primary" className="home-photo-badge">Featured hill</Badge>
-        <Card.Title as="h2" className="home-photo-title">{hill.name}</Card.Title>
+      <Card.Body>
+        <Badge bg="primary">Featured hill</Badge>
+        <Card.Title as="h2">{hill.name}</Card.Title>
         <Card.Text>{hill.description}</Card.Text>
       </Card.Body>
     </Card>
@@ -57,12 +56,8 @@ function HomePage() {
             Compare distance, vertical drop, terrain, and map locations for Wisconsin ski areas.
           </p>
           <div className="home-actions">
-            <div className="home-action-item">
-              <Button as={Link} to="/ski-hills" variant="primary">Browse Ski Hills</Button>
-            </div>
-            <div className="home-action-item">
-              <Button as={Link} to="/ski-hill-map" variant="outline-primary">View Map</Button>
-            </div>
+            <Button as={Link} to="/ski-hills" variant="primary">Browse Ski Hills</Button>
+            <Button as={Link} to="/ski-hill-map" variant="outline-primary">View Map</Button>
           </div>
           <div className="home-stats">
             <HomeStat value={skiHills.length} label="ski hills" />
