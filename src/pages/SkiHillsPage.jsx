@@ -1,6 +1,9 @@
 import { useMemo, useState } from 'react'
-import { Container, Row, Col, Form } from 'react-bootstrap'
+import { Container, Row } from 'react-bootstrap'
+import PageHeader from '../components/PageHeader'
 import SkiHillCard from '../components/SkiHillCard'
+import SkiHillFilters from '../components/SkiHillFilters'
+import StatsStrip from '../components/StatsStrip'
 import { skiHills } from '../data/skiHills'
 
 function SkiHillsPage() {
@@ -79,103 +82,42 @@ function SkiHillsPage() {
     })
   }
 
+  const highestVertical = Math.max(...skiHills.map(hill => hill.verticalDropFt))
+  const terrainCount = terrainOptions.length
+
   return (
-    <Container style={{ padding: '40px 0' }}>
-      <h1>Ski Hills</h1>
-      <Form className="mb-4">
-        <Row className="g-3 align-items-end">
-          <Col xs={12} md={4} lg={3}>
-            <Form.Group controlId="searchHill">
-              <Form.Label>Search by hill name</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Type a hill name"
-                value={search}
-                onChange={event => setSearch(event.target.value)}
-              />
-            </Form.Group>
-          </Col>
-          <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="distanceMin">
-              <Form.Label>Min distance (miles)</Form.Label>
-              <Form.Control
-                type="number"
-                min="0"
-                step="1"
-                value={distanceMin}
-                onChange={event => setDistanceMin(event.target.value)}
-              />
-            </Form.Group>
-          </Col>
-          <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="distanceMax">
-              <Form.Label>Max distance (miles)</Form.Label>
-              <Form.Control
-                type="number"
-                min="0"
-                step="1"
-                value={distanceMax}
-                onChange={event => setDistanceMax(event.target.value)}
-              />
-            </Form.Group>
-          </Col>
-          <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="verticalMin">
-              <Form.Label>Min vertical (ft)</Form.Label>
-              <Form.Control
-                type="number"
-                min="0"
-                step="10"
-                value={verticalMin}
-                onChange={event => setVerticalMin(event.target.value)}
-              />
-            </Form.Group>
-          </Col>
-          <Col xs={6} md={4} lg={2}>
-            <Form.Group controlId="verticalMax">
-              <Form.Label>Max vertical (ft)</Form.Label>
-              <Form.Control
-                type="number"
-                min="0"
-                step="10"
-                value={verticalMax}
-                onChange={event => setVerticalMax(event.target.value)}
-              />
-            </Form.Group>
-          </Col>
-          <Col xs={12} md={4} lg={3}>
-            <Form.Group controlId="sortBy">
-              <Form.Label>Sort by</Form.Label>
-              <Form.Select value={sortBy} onChange={event => setSortBy(event.target.value)}>
-                <option value="distance-asc">Distance: near to far</option>
-                <option value="distance-desc">Distance: far to near</option>
-                <option value="vertical-desc">Vertical drop: high to low</option>
-                <option value="vertical-asc">Vertical drop: low to high</option>
-                <option value="name-asc">Name: A to Z</option>
-                <option value="name-desc">Name: Z to A</option>
-              </Form.Select>
-            </Form.Group>
-          </Col>
-          <Col xs={12} lg={6}>
-            <Form.Group controlId="terrainTypes">
-              <Form.Label>Terrain types</Form.Label>
-              <div className="d-flex flex-wrap gap-3">
-                {terrainOptions.map(terrain => (
-                  <Form.Check
-                    key={terrain}
-                    type="checkbox"
-                    id={`terrain-${terrain}`}
-                    label={terrain}
-                    checked={selectedTerrain.includes(terrain)}
-                    onChange={() => toggleTerrain(terrain)}
-                  />
-                ))}
-              </div>
-            </Form.Group>
-          </Col>
-        </Row>
-      </Form>
-      <Row>
+    <Container className="page-shell">
+      <PageHeader
+        eyebrow="Explore"
+        title="Ski Hills"
+        description="Compare Wisconsin ski areas by distance, vertical drop, and terrain before picking your next stop."
+      />
+      <StatsStrip
+        stats={[
+          { value: skiHills.length, label: 'hills listed' },
+          { value: `${highestVertical} ft`, label: 'largest vertical' },
+          { value: terrainCount, label: 'terrain types' },
+          { value: filteredHills.length, label: 'current matches' },
+        ]}
+      />
+      <SkiHillFilters
+        search={search}
+        setSearch={setSearch}
+        distanceMin={distanceMin}
+        setDistanceMin={setDistanceMin}
+        distanceMax={distanceMax}
+        setDistanceMax={setDistanceMax}
+        verticalMin={verticalMin}
+        setVerticalMin={setVerticalMin}
+        verticalMax={verticalMax}
+        setVerticalMax={setVerticalMax}
+        selectedTerrain={selectedTerrain}
+        terrainOptions={terrainOptions}
+        toggleTerrain={toggleTerrain}
+        sortBy={sortBy}
+        setSortBy={setSortBy}
+      />
+      <Row className="hill-grid">
         {filteredHills.map(hill => (
           <SkiHillCard key={hill.id} hill={hill} />
         ))}
