@@ -16,7 +16,100 @@ body {
 }
 
 .home-panel {
-  padding: 76px 0;
+  padding: 64px 0 72px;
+}
+
+.home-panel h1 {
+  max-width: 720px;
+  margin-bottom: 1rem;
+  color: #142536;
+  font-size: clamp(2.5rem, 6vw, 4.7rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.home-eyebrow {
+  margin-bottom: 0.75rem;
+  color: #0b5ed7;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-lead {
+  max-width: 620px;
+  margin-bottom: 1.5rem;
+  color: #526575;
+  font-size: 1.15rem;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 620px;
+  margin-top: 2rem;
+}
+
+.home-stat {
+  padding: 1rem;
+  border: 1px solid rgba(23, 33, 43, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 30px rgba(17, 38, 58, 0.08);
+}
+
+.home-stat strong {
+  display: block;
+  color: #142536;
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.home-stat span {
+  display: block;
+  margin-top: 0.35rem;
+  color: #526575;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.home-photo-card {
+  overflow: hidden;
+  border: 0;
+  border-radius: 18px;
+}
+
+.home-photo-card .card-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.home-photo-card .badge {
+  margin-bottom: 0.7rem;
+}
+
+.home-photo-card .card-title,
+.home-feature .card-title {
+  color: #142536;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.home-feature-row {
+  margin-top: 2.2rem;
+}
+
+.home-feature .card-text,
+.home-photo-card .card-text {
+  color: #526575;
 }
 
 .page-intro {
@@ -206,11 +299,23 @@ body {
   .ski-map-page {
     padding-top: 2rem;
   }
+
+  .home-panel {
+    padding-top: 48px;
+  }
 }
 
 @media (max-width: 575.98px) {
   .home-panel {
-    padding: 52px 0;
+    padding: 40px 0 52px;
+  }
+
+  .home-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .home-photo-card .card-img {
+    height: 220px;
   }
 
   .page-intro h1 {
