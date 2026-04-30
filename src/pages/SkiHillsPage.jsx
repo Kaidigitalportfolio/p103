@@ -81,7 +81,7 @@ function SkiHillsPage() {
   }
 
   return (
-    <Container style={{ padding: '40px 0' }}>
+    <Container className="ski-hills-page">
       <PageIntro
         title="Ski Hills"
         description="Filter Wisconsin ski areas by distance, vertical drop, terrain, and name."

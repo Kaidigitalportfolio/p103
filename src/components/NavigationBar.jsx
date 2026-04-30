@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function NavigationBar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" className="site-nav">
       <Container>
         <Navbar.Brand as={Link} to="/">WI Ski Hills</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

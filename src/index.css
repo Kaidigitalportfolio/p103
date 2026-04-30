@@ -2,8 +2,8 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 36rem),
-    linear-gradient(180deg, #f4f8fb 0%, #e7eef5 100%);
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0) 34rem),
+    linear-gradient(180deg, #f7fafc 0%, #edf3f8 52%, #e7eef5 100%);
   color: #17212b;
 }
 
@@ -11,8 +11,44 @@ body {
   min-height: 100vh;
 }
 
-.navbar {
-  box-shadow: 0 10px 28px rgba(11, 31, 47, 0.14);
+#root > div {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.site-nav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 28px rgba(11, 31, 47, 0.16);
+}
+
+.site-nav .navbar-brand {
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.site-nav .nav-link {
+  border-radius: 999px;
+  font-weight: 600;
+  padding-right: 0.9rem;
+  padding-left: 0.9rem;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus-visible {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.site-footer {
+  margin-top: auto;
+  padding: 24px 0;
+  background: #17212b;
+  color: #dce7ef;
+}
+
+.site-footer p {
+  margin: 0;
+  font-weight: 600;
 }
 
 .home-panel {
@@ -62,7 +98,7 @@ body {
   padding: 1rem;
   border: 1px solid rgba(23, 33, 43, 0.08);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 12px 30px rgba(17, 38, 58, 0.08);
 }
 
@@ -83,7 +119,7 @@ body {
 
 .home-photo-card {
   overflow: hidden;
-  border: 0;
+  border: 1px solid rgba(23, 33, 43, 0.08);
   border-radius: 18px;
 }
 
@@ -155,24 +191,28 @@ body {
 }
 
 .filter-card {
-  padding: 1rem;
+  padding: 1.25rem;
   border: 1px solid rgba(23, 33, 43, 0.08);
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255, 255, 255, 0.92);
   box-shadow: 0 16px 38px rgba(17, 38, 58, 0.08);
 }
 
+.ski-hills-page {
+  padding: 42px 0 56px;
+}
+
 .ski-map-page {
-  padding: 3rem 0 4rem;
+  padding: 42px 0 56px;
 }
 
 .ski-map-board {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(23, 33, 43, 0.08);
-  border-radius: 28px;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.92), rgba(220, 232, 242, 0.82));
-  box-shadow: 0 24px 70px rgba(17, 38, 58, 0.12);
+  border-radius: 18px;
+  background: #f9fbfd;
+  box-shadow: 0 16px 38px rgba(17, 38, 58, 0.1);
   padding: 1rem;
 }
 
@@ -219,22 +259,23 @@ body {
   height: auto;
   filter: drop-shadow(0 10px 16px rgba(11, 27, 43, 0.22));
   transform-origin: bottom center;
-  transition: filter 150ms ease;
+  transition: filter 150ms ease, transform 150ms ease;
 }
 
 .ski-map-pin:hover .ski-map-pin-icon,
 .ski-map-pin:focus-visible .ski-map-pin-icon,
 .ski-map-pin.is-active .ski-map-pin-icon {
   filter: drop-shadow(0 14px 20px rgba(13, 110, 253, 0.28));
+  transform: translateY(-2px);
 }
 
 .ski-map-pin:focus-visible {
-  outline: none;
+  outline: 3px solid rgba(13, 110, 253, 0.34);
+  outline-offset: 4px;
 }
 
 .ski-map-card {
-  border: 0;
-  border-radius: 24px;
+  border-radius: 18px;
 }
 
 .ski-map-card .card-body {
@@ -253,17 +294,29 @@ body {
 .ski-hill-card-image {
   height: 180px;
   object-fit: cover;
-  border-radius: 14px 14px 0 0;
+  border-radius: 13px 13px 0 0;
 }
 
 .card {
   border: 1px solid rgba(23, 33, 43, 0.08);
   border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(17, 38, 58, 0.08);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 28px rgba(17, 38, 58, 0.08);
+  transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.card:hover {
+  box-shadow: 0 18px 38px rgba(17, 38, 58, 0.12);
+  transform: translateY(-2px);
 }
 
 .card-body {
   padding: 1.25rem;
+}
+
+.card-title {
+  color: #142536;
+  font-weight: 700;
 }
 
 .card-title a {
@@ -284,15 +337,25 @@ body {
 .form-select {
   border-color: rgba(23, 33, 43, 0.16);
   border-radius: 10px;
+  box-shadow: none;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.16);
 }
 
 .btn {
   border-radius: 999px;
   font-weight: 600;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
-.navbar-brand {
-  font-weight: 700;
+.btn:focus-visible {
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.24);
 }
 
 @media (max-width: 991.98px) {
@@ -303,11 +366,20 @@ body {
   .home-panel {
     padding-top: 48px;
   }
+
+  .site-nav .nav-link {
+    margin-top: 0.25rem;
+  }
 }
 
 @media (max-width: 575.98px) {
   .home-panel {
     padding: 40px 0 52px;
+  }
+
+  .ski-hills-page,
+  .ski-map-page {
+    padding: 32px 0 44px;
   }
 
   .home-stats {
