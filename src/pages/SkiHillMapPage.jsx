@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import wisconsinMap from '../assets/wisconsin.svg'
 import pinImage from '../assets/pin.svg'
+import HillStats from '../components/HillStats'
 import MapPin from '../components/MapPin'
 import PageIntro from '../components/PageIntro'
 import { skiHills } from '../data/skiHills'
@@ -67,6 +68,7 @@ function SkiHillMapPage() {
           title="Wisconsin ski hills on the map"
           description="Hover a pin to preview a hill. Click a pin to keep its card open while you explore."
         />
+        <HillStats hills={activeHill ? [activeHill] : skiHills} />
 
         <Row className="g-4 align-items-start">
           <Col lg={8}>
