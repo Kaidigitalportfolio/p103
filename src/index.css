@@ -52,12 +52,12 @@ body {
 }
 
 .home-panel {
-  padding: 64px 0 72px;
+  padding: 76px 0 84px;
 }
 
 .home-panel h1 {
   max-width: 720px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.15rem;
   color: #142536;
   font-size: clamp(2.5rem, 6vw, 4.7rem);
   font-weight: 800;
@@ -75,27 +75,31 @@ body {
 
 .home-lead {
   max-width: 620px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
   color: #526575;
   font-size: 1.15rem;
+  line-height: 1.65;
 }
 
 .home-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
 .home-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
+  gap: 1rem;
   max-width: 620px;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 .home-stat {
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.15rem;
   border: 1px solid rgba(23, 33, 43, 0.08);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.9);
@@ -111,7 +115,6 @@ body {
 
 .home-stat span {
   display: block;
-  margin-top: 0.35rem;
   color: #526575;
   font-size: 0.9rem;
   font-weight: 600;
@@ -129,7 +132,7 @@ body {
 }
 
 .home-photo-card .badge {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.9rem;
 }
 
 .home-photo-card .card-title,
@@ -140,17 +143,18 @@ body {
 }
 
 .home-feature-row {
-  margin-top: 2.2rem;
+  margin-top: 3rem;
 }
 
 .home-feature .card-text,
 .home-photo-card .card-text {
   color: #526575;
+  line-height: 1.6;
 }
 
 .page-intro {
   max-width: 760px;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2.25rem;
 }
 
 .page-intro-center {
@@ -172,6 +176,7 @@ body {
   margin: 0;
   color: #526575;
   font-size: 1.08rem;
+  line-height: 1.6;
 }
 
 .page-intro-center p {
@@ -191,7 +196,7 @@ body {
 }
 
 .filter-card {
-  padding: 1.25rem;
+  padding: 1.5rem;
   border: 1px solid rgba(23, 33, 43, 0.08);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.92);
@@ -199,11 +204,11 @@ body {
 }
 
 .ski-hills-page {
-  padding: 42px 0 56px;
+  padding: 52px 0 68px;
 }
 
 .ski-map-page {
-  padding: 42px 0 56px;
+  padding: 52px 0 68px;
 }
 
 .ski-map-board {
@@ -213,7 +218,7 @@ body {
   border-radius: 18px;
   background: #f9fbfd;
   box-shadow: 0 16px 38px rgba(17, 38, 58, 0.1);
-  padding: 1rem;
+  padding: 1.35rem;
 }
 
 .ski-map-stage {
@@ -259,19 +264,17 @@ body {
   height: auto;
   filter: drop-shadow(0 10px 16px rgba(11, 27, 43, 0.22));
   transform-origin: bottom center;
-  transition: filter 150ms ease, transform 150ms ease;
+  transition: filter 150ms ease;
 }
 
 .ski-map-pin:hover .ski-map-pin-icon,
 .ski-map-pin:focus-visible .ski-map-pin-icon,
 .ski-map-pin.is-active .ski-map-pin-icon {
   filter: drop-shadow(0 14px 20px rgba(13, 110, 253, 0.28));
-  transform: translateY(-2px);
 }
 
 .ski-map-pin:focus-visible {
-  outline: 3px solid rgba(13, 110, 253, 0.34);
-  outline-offset: 4px;
+  outline: none;
 }
 
 .ski-map-card {
@@ -279,7 +282,7 @@ body {
 }
 
 .ski-map-card .card-body {
-  padding: 1.5rem;
+  padding: 1.75rem;
 }
 
 .ski-map-card-label {
@@ -311,12 +314,17 @@ body {
 }
 
 .card-body {
-  padding: 1.25rem;
+  padding: 1.4rem;
 }
 
 .card-title {
+  margin-bottom: 0.8rem;
   color: #142536;
   font-weight: 700;
+}
+
+.card-text {
+  line-height: 1.6;
 }
 
 .card-title a {
@@ -329,6 +337,7 @@ body {
 }
 
 .form-label {
+  margin-bottom: 0.45rem;
   color: #465565;
   font-weight: 600;
 }
@@ -350,6 +359,7 @@ body {
 .btn {
   border-radius: 999px;
   font-weight: 600;
+  margin-top: 0.15rem;
   padding-right: 1rem;
   padding-left: 1rem;
 }

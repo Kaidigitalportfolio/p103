@@ -10,10 +10,18 @@ function MapPin({
   return (
     <button
       type="button"
-      className={`ski-map-pin${isLocked ? ' is-active' : ''}`}
+      className="ski-map-pin"
       style={{
+        position: 'absolute',
         top: hill.mapPosition.top,
         left: hill.mapPosition.left,
+        transform: 'translate(-34%, -100%)',
+        display: 'block',
+        padding: 0,
+        border: 0,
+        background: 'transparent',
+        cursor: 'pointer',
+        zIndex: 3,
       }}
       aria-pressed={isLocked}
       aria-label={`Show ${hill.name}`}
@@ -26,6 +34,13 @@ function MapPin({
         src={pinImage}
         alt=""
         className="ski-map-pin-icon"
+        style={{
+          display: 'block',
+          width: '30px',
+          height: '30px',
+          objectFit: 'contain',
+          filter: 'drop-shadow(0 10px 16px rgba(11, 27, 43, 0.22))',
+        }}
       />
     </button>
   )
