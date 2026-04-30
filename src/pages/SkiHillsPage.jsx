@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Container, Row, Col, Form } from 'react-bootstrap'
+import PageIntro from '../components/PageIntro'
 import SkiHillCard from '../components/SkiHillCard'
 import { skiHills } from '../data/skiHills'
 
@@ -81,8 +82,11 @@ function SkiHillsPage() {
 
   return (
     <Container style={{ padding: '40px 0' }}>
-      <h1>Ski Hills</h1>
-      <Form className="mb-4">
+      <PageIntro
+        title="Ski Hills"
+        description="Filter Wisconsin ski areas by distance, vertical drop, terrain, and name."
+      />
+      <Form className="filter-card mb-4">
         <Row className="g-3 align-items-end">
           <Col xs={12} md={4} lg={3}>
             <Form.Group controlId="searchHill">

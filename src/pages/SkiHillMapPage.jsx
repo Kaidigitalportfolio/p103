@@ -3,6 +3,7 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 import wisconsinMap from '../assets/wisconsin.svg'
 import pinImage from '../assets/pin.svg'
 import MapPin from '../components/MapPin'
+import PageIntro from '../components/PageIntro'
 import { skiHills } from '../data/skiHills'
 
 const mapStageStyle = {
@@ -62,12 +63,10 @@ function SkiHillMapPage() {
   return (
     <main className="ski-map-page">
       <Container>
-        <div className="ski-map-hero">
-          <h1>Wisconsin ski hills on the map</h1>
-          <p className="ski-map-intro">
-            Hover a pin to preview a hill. Click a pin to keep its card open while you explore.
-          </p>
-        </div>
+        <PageIntro
+          title="Wisconsin ski hills on the map"
+          description="Hover a pin to preview a hill. Click a pin to keep its card open while you explore."
+        />
 
         <Row className="g-4 align-items-start">
           <Col lg={8}>
