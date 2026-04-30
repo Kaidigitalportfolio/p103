@@ -65,8 +65,8 @@ export const skiHills = [
     description: 'A western Wisconsin hill near the Minnesota border with varied park features and approachable terrain.',
     website: 'https://www.trollhaugen.com/',
     mapPosition: {
-      top: '72%',
-      left: '16%',
+      top: '65%',
+      left: '3%',
     },
   },
   {
@@ -79,8 +79,8 @@ export const skiHills = [
     description: 'A compact southeastern Wisconsin hill in Slinger that is popular for quick day and evening trips.',
     website: 'https://www.littleswitz.com/',
     mapPosition: {
-      top: '86%',
-      left: '69%',
+      top: '72%',
+      left: '76%',
     },
   },
   {
@@ -93,8 +93,8 @@ export const skiHills = [
     description: 'A central Wisconsin hill near Wild Rose with tubing, park features, and family-oriented terrain.',
     website: 'https://www.nordicmountain.com/',
     mapPosition: {
-      top: '64%',
-      left: '47%',
+      top: '63%',
+      left: '60%',
     },
   },
   {
@@ -107,8 +107,8 @@ export const skiHills = [
     description: 'A Kewaskum-area ski hill in eastern Wisconsin known for night skiing and terrain park options.',
     website: 'https://skisunburst.com/',
     mapPosition: {
-      top: '79%',
-      left: '71%',
+      top: '68%',
+      left: '77%',
     },
   },
   {
@@ -121,8 +121,8 @@ export const skiHills = [
     description: 'A far northern Wisconsin resort near Upson with longer runs and a more remote, up-north feel.',
     website: 'https://whitecapresort.com/',
     mapPosition: {
-      top: '19%',
-      left: '64%',
+      top: '27%',
+      left: '42%',
     },
   },
   {
@@ -135,7 +135,7 @@ export const skiHills = [
     description: 'A western Wisconsin ski area near Bruce with solid vertical for the region and a classic local feel.',
     website: 'https://www.christiemountain.com/',
     mapPosition: {
-      top: '49%',
+      top: '52%',
       left: '24%',
     },
   },
